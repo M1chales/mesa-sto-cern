@@ -1,0 +1,11 @@
+{
+  "name": "Μέσα στο CERN",
+  "short_name": "Μέσα στο CERN",
+  "description": "Ένα διαδραστικό 3D ταξίδι στο CERN.",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0c0c0f",
+  "theme_color": "#0c0c0f",
+  "icons": [{ "src": "assets/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
