@@ -131,9 +131,9 @@ print('Higgs που κράτησες:', higgsKept, 'από', higgsTotal);`,
     REVIEW.forEach(q => api.quiz(body, q));
 
     body.append(section('📸 Φωτογραφίες από το ταξίδι', PHOTOS.length
-      ? `<div class="photo-grid">${PHOTOS.map(p => `<figure style="margin:0"><img src="${p.src}" alt="${p.caption || ''}" loading="lazy"><figcaption class="muted" style="font-size:.78rem;margin-top:4px">${p.caption || ''}</figcaption></figure>`).join('')}</div>`
+      ? `<div class="photo-grid">${PHOTOS.map(p => `<figure style="margin:0"><img src="${p.src}" alt="${p.caption || ''}" loading="lazy"></figure>`).join('')}</div>`
       : '<div class="photo-empty">📷 Οι φωτογραφίες από το ταξίδι έρχονται σύντομα.</div>'));
-    body.querySelectorAll('.photo-grid img').forEach(img => img.onclick = () => modal(`<div><img src="${img.src}" style="width:100%;border-radius:14px"><p class="muted">${img.alt}</p><div class="btn-row" style="justify-content:flex-end"><button class="btn" data-close>Κλείσιμο</button></div></div>`));
+    body.querySelectorAll('.photo-grid img').forEach(img => img.onclick = () => modal(`<div><img src="${img.src}" alt="${img.alt}" style="width:100%;border-radius:14px"><div class="btn-row" style="margin-top:12px;justify-content:flex-end"><button class="btn" data-close>Κλείσιμο</button></div></div>`));
 
     body.append(section('Συντελεστές', `<p class="muted" style="font-size:.88rem">Το περιεχόμενο βασίζεται στις παρουσιάσεις του CERN <i>«Λίγα λόγια για το CERN»</i> και <i>«Η περίφημη… Εργασία!»</i> των <b>Ν. Χαριτωνίδη</b> (CERN), <b>Ε. Κανελλάκη</b> (CERN & ΕΜΠ) και <b>Σ. Πανισκάκη</b> (CERN & Πανεπιστήμιο της Πάδοβας), Σεπτέμβριος 2026.</p>
       <p class="muted" style="font-size:.88rem">Φτιαγμένο με HTML, CSS και JavaScript· τα 3D με τη βιβλιοθήκη three.js. Η Μι είναι πρωτότυπος χαρακτήρας. Οι προσομοιώσεις είναι απλοποιημένα μοντέλα — η πραγματική φυσική είναι πιο περίπλοκη (και ακόμα πιο ενδιαφέρουσα).</p>`));
