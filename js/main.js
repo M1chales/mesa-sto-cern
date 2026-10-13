@@ -26,7 +26,18 @@ function resize() {
   if (!r.width || !r.height) return;
   size = { w: r.width, h: r.height };
   renderer.setSize(size.w, size.h, false);
-  if (world) { world.camera.aspect = size.w / size.h; world.camera.updateProjectionMatrix(); world.onResize && world.onResize(size); }
+  if (world) { fitCamera(world.camera); world.onResize && world.onResize(size); }
+}
+// Scenes are framed for a landscape stage. On narrow (portrait) screens, widen the
+// vertical FOV so the horizontal view stays the same and side labels aren't cut off.
+const FRAME_ASPECT = 1.15;
+function fitCamera(cam) {
+  const aspect = size.w / size.h;
+  if (cam.userData.baseFov === undefined) cam.userData.baseFov = cam.fov;
+  const base = cam.userData.baseFov * Math.PI / 180;
+  cam.fov = aspect >= FRAME_ASPECT ? cam.userData.baseFov
+    : Math.min(80, 2 * Math.atan(Math.tan(base / 2) * FRAME_ASPECT / aspect) * 180 / Math.PI);
+  cam.aspect = aspect; cam.updateProjectionMatrix();
 }
 new ResizeObserver(resize).observe(stageEl);
 

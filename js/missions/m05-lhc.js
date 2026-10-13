@@ -50,7 +50,7 @@ export default {
         new THREE.MeshBasicMaterial({ color: s.col, transparent: true, opacity: .25 }));
       z.rotation.x = Math.PI / 2; z.rotation.z = -s.w / 2; z.position.copy(s.c); scene.add(z);
       zones[i] = z;
-      api.label(new THREE.Vector3(s.c.x, 1.2 + s.r * .05, s.c.z - s.r - .6), s.name, '');
+      api.label(new THREE.Vector3(s.c.x, 1.2 + s.r * .05, s.c.z - s.r - .6), s.name.replace(/^(.*) \((\w+)\)$/, '<span class="lbl-long">$1 </span><span class="lbl-paren">(</span>$2<span class="lbl-paren">)</span>'), '');
     });
     // Linac: straight line into the PSB
     const psb = STAGES[1];
