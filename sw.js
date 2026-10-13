@@ -1,5 +1,5 @@
 // Offline cache: network first for app files, falling back to the cache.
-const CACHE = 'particle-quest-v1';
+const CACHE = 'particle-quest-v2';
 self.addEventListener('install', e => self.skipWaiting());
 self.addEventListener('activate', e => e.waitUntil(self.clients.claim()));
 self.addEventListener('fetch', e => {
