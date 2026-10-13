@@ -18,5 +18,7 @@ export const PHOTOS = [
   { src: 'assets/photos/geneva-lake.webp', caption: "Γενεύη: στη λίμνη, με το Jet d'Eau πίσω μας" },
   { src: 'assets/photos/cathedral.webp', caption: "Στα σκαλιά του καθεδρικού του Αγίου Πέτρου" },
   { src: 'assets/photos/chess.webp', caption: "Γιγάντιο σκάκι στο Parc des Bastions" },
+  { src: 'assets/photos/bastions-pose.webp', caption: "Βόλτα στο Parc des Bastions" },
+  { src: 'assets/photos/bastions-laugh.webp', caption: "…και η ίδια φωτογραφία, με γέλια" },
   { src: 'assets/photos/fondue.webp', caption: "Φοντί για όλους!" },
 ];
